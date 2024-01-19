@@ -14,7 +14,7 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_security_group" "Jenkins-VM" {
+resource "aws_security_group" "Jenkins-VM-SG" {
   name        = "Jenkins-VM"
   description = "Allow TLS inbound traffic"
 
