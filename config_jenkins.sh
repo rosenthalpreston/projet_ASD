@@ -18,13 +18,3 @@ aws --version
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | sudo tar xz -C /tmp
 sudo mv /tmp/eksctl /bin
 eksctl version
-
-# Setup Kubernetes using eksctl
-sudo eksctl create cluster --name virtualtechbox-cluster \
---region ap-south-1 \
---node-type t2.small \
---nodes 3 --auto-approve
-
-# Verify Cluster
-kubectl get nodes
-kubectl get svc
