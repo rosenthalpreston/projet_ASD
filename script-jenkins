@@ -50,15 +50,15 @@ pipeline{
                  script{
                     withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker'){   
                         sh "docker build -t swiggy-clone ."
-                        sh "docker tag swiggy-clone ashfaque9x/swiggy-clone:latest "
-                        sh "docker push ashfaque9x/swiggy-clone:latest "
+                        sh "docker tag swiggy-clone rosenthalpreston/swiggy-clone:latest "
+                        sh "docker push rosenthalpreston/swiggy-clone:latest "
                      }
                  }
              }
          }
          stage("TRIVY"){
              steps{
-                 sh "trivy image ashfaque9x/swiggy-clone:latest > trivyimage.txt" 
+                 sh "trivy image rosenthalpreston/swiggy-clone:latest > trivyimage.txt" 
              }
          }
           stage('Deploy to Kubernets'){
